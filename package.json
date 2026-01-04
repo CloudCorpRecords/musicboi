@@ -29,12 +29,7 @@
     ],
     "mac": {
       "category": "public.app-category.music",
-      "target": {
-        "target": "dir",
-        "arch": [
-          "arm64"
-        ]
-      }
+      "target": "dir"
     },
     "directories": {
       "output": "release"

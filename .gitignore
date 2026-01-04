@@ -31,3 +31,9 @@ public/generated/*
 *.njsproj
 *.sln
 *.sw?
+
+# Build Artifacts
+build/
+dist-python/
+release/
+server.spec
