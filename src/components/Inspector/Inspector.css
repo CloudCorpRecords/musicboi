@@ -1,0 +1,176 @@
+.inspector {
+    width: var(--inspector-width);
+    min-width: var(--inspector-width);
+    background: linear-gradient(90deg, rgba(22, 22, 22, 0.98) 0%, var(--bg-secondary) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideIn 0.3s ease-out;
+}
+
+.inspector .panel-header {
+    background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-tertiary) 100%);
+}
+
+.inspector-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    gap: var(--space-md);
+}
+
+.inspector-empty::before {
+    content: '📋';
+    font-size: 48px;
+    opacity: 0.3;
+}
+
+.inspector-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-lg);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.inspector-section {
+    margin-bottom: var(--space-xl);
+    animation: slideUp 0.3s ease-out;
+}
+
+.section-title {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.section-title::before {
+    content: '';
+    width: 3px;
+    height: 12px;
+    background: var(--accent-primary);
+    border-radius: var(--radius-full);
+}
+
+.property-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+    gap: var(--space-md);
+}
+
+.property-row label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.property-row input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.property-row input[type="color"] {
+    width: 36px;
+    height: 28px;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-subtle);
+    background: var(--bg-primary);
+}
+
+.property-row input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-full);
+    accent-color: var(--accent-primary);
+    cursor: pointer;
+}
+
+.property-value {
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--text-primary);
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-primary);
+    border-radius: var(--radius-sm);
+    min-width: 50px;
+    text-align: center;
+}
+
+.property-knobs {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--space-lg) 0;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-md);
+}
+
+.property-toggles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.toggle-item:hover {
+    background: var(--bg-elevated);
+}
+
+.toggle-item.active {
+    color: var(--text-primary);
+    border-color: var(--border-subtle);
+}
+
+.toggle-item.active.mute {
+    background: linear-gradient(135deg, rgba(255, 149, 0, 0.15) 0%, rgba(255, 149, 0, 0.05) 100%);
+    border-color: rgba(255, 149, 0, 0.3);
+}
+
+.toggle-item.active.solo {
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.15) 0%, rgba(0, 212, 170, 0.05) 100%);
+    border-color: rgba(0, 212, 170, 0.3);
+}
+
+.toggle-item.active.arm {
+    background: linear-gradient(135deg, rgba(255, 59, 48, 0.15) 0%, rgba(255, 59, 48, 0.05) 100%);
+    border-color: rgba(255, 59, 48, 0.3);
+}

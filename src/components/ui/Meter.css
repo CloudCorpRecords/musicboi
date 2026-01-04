@@ -1,0 +1,75 @@
+.meter {
+    display: flex;
+    gap: 3px;
+}
+
+.meter.stereo {
+    gap: 4px;
+}
+
+.meter-channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meter-track {
+    position: relative;
+    width: 10px;
+    background: linear-gradient(180deg, #0a0a0a 0%, var(--bg-primary) 100%);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.meter-fill {
+    position: absolute;
+    bottom: 0;
+    left: 1px;
+    right: 1px;
+    transition: height 0.03s linear;
+    border-radius: 0 0 2px 2px;
+}
+
+.meter-peak {
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    height: 3px;
+    background: var(--meter-red);
+    box-shadow: 0 0 6px var(--meter-red);
+    transition: bottom 0.1s ease-out;
+    border-radius: 1px;
+}
+
+.meter-segments {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1px;
+    padding: 2px;
+}
+
+.meter-segment {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1px;
+}
+
+.meter-segment.active {
+    background: transparent;
+}
+
+/* Segment color zones */
+.meter-segment:nth-child(-n+4) {
+    /* Top 4 segments - red zone */
+}
+
+.meter-segment:nth-child(n+5):nth-child(-n+6) {
+    /* Yellow zone */
+}

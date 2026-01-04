@@ -1,0 +1,4 @@
+.waveform-canvas {
+    display: block;
+    border-radius: var(--radius-sm);
+}
